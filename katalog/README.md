@@ -3,6 +3,7 @@ https://james-pbp-tugas2.herokuapp.com/
 
 ## Bagan *Request Client* ke Web Aplikasi berbasis Django
 
+![BaganMVT_Tugas2](https://user-images.githubusercontent.com/107617626/189880988-11b9aec3-7bad-4ca6-ad96-60eb44072b54.png)
 
 
 ### Penjelasan Bagan di Atas
