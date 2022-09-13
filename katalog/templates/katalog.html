@@ -27,7 +27,7 @@
         <th>{{barang.item_stock}}</th>
         <th>{{barang.rating}}</th>
         <th>{{barang.description}}</th>
-        <th>{{barang.item_url}}</th>
+        <th><a href={{ item.item_url }}></a>{{barang.item_url}}</th>
     </tr>
 {% endfor %}
   </table>
