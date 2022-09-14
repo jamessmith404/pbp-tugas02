@@ -24,9 +24,9 @@ class CatalogItemTestCase(TestCase) :
             item_url="https://www.tokopedia.com/mapstore077/indomie-goreng-1-dus-40-pcs"
         )
         # Testing if the functionality is ok
-        self.assertEqual(indomie.item_name == "indomie")
-        self.assertEqual(indomie.item_price == 3500)
-        self.assertEqual(indomie.item_stock == 40)
-        self.assertEqual(indomie.description == "rasa mie goreng ori")
-        self.assertEqual(indomie.rating == 9)
-        self.assertEqual(indomie.item_url == "https://www.tokopedia.com/mapstore077/indomie-goreng-1-dus-40-pcs")
+        self.assertEqual(indomie.item_name, "indomie")
+        self.assertEqual(indomie.item_price, 3500)
+        self.assertEqual(indomie.item_stock, 40)
+        self.assertEqual(indomie.description, "rasa mie goreng ori")
+        self.assertEqual(indomie.rating, 9)
+        self.assertEqual(indomie.item_url, "https://www.tokopedia.com/mapstore077/indomie-goreng-1-dus-40-pcs")
