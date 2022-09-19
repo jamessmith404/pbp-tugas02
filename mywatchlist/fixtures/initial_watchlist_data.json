@@ -1,0 +1,112 @@
+[
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":1,
+        "fields":{
+            "watched": true,
+            "title": "Thor: Love and Thunder",
+            "rating": 3,
+            "release_date": "2022-07-06",
+            "review": "Even though Thor: Love and Thunder's constant silliness makes it hard to invest in the more serious sides of the story, there's still plenty here to enjoy."
+        }
+},
+{
+        "model":"mywatchlist.mywatchlist",
+        "pk":2,
+        "fields":{
+            "watched": true,
+            "title": "A Whisker Away",
+            "rating": 4,
+            "release_date": "2020-06-18",
+            "review": "The cute factor in Netflix anime film 'A Whisker Away' is bountiful enough, even if its love story of naive obsession is a little more than worrisome. One could say this is about the delusions of puppy love, but aha, they'd be wrong—'A Whisker Away' is all about cats."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":3,
+        "fields":{
+            "watched": false,
+            "title":"Your Name",
+            "rating": 5,
+            "release_date": "2016-12-07",
+            "review": "To summarise, Makoto Shinkai’s Kimi no Na wa is a blast. Entertaining, emotional and so much fun all the way to the end. The film is full of stunning visuals of beautiful landscapes accompanied by an energetic pop soundtrack that feels very refreshing and unique."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":4,
+        "fields":{
+            "watched": true,
+            "title":"Ngeri-Ngeri Sedap",
+            "rating": 3,
+            "release_date": "2022-06-02",
+            "review": "It was a bit shaky at first, but then it's getting better. A familial comedy-drama that felt familiar and pertinent. While the drama was sufficiently emotive and heartfelt, it's admirable that the jokes weren't sticking out like a sore thumb just for the sake of the need for some comedic vignettes."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":5,
+        "fields":{
+            "watched": false,
+            "title":"Spider-Man: Far from Home",
+            "rating": 4,
+            "release_date": "2019-07-03",
+            "review": "A breezily unpredictable blend of teen romance and superhero action, Spider-Man: Far from Home stylishly sets the stage for the next era of the MCU."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":6,
+        "fields":{
+            "watched": false,
+            "title":"Final Destination 3",
+            "rating": 3,
+            "release_date": "2006-02-10",
+            "review": "Final Destination 3 is basically the same film as Final Destination only this time its a roller coaster crash not a plane exploding that disrupts deaths plan. With some cool and very gory death scenes, an all new cast, and the same creepy, death's coming to get you feel as the first two films. This turns out to be way better than i would have expected."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":7,
+        "fields":{
+            "watched": false,
+            "title":"Ant-Man",
+            "rating": 4,
+            "release_date": "2015-07-16",
+            "review": "Ant-Man is an extremely fun origin story and a superb addition to the MCU. Paul Rudd is incredibly charming in the lead role with Evangeline Lilly, Michael Douglas and Michael Peña giving great supporting performances. The CG is great and the action sequences are extremely impressive. The humour works really well and it's consistently funny. Unfortunately, it does suffer from the weak villain problem that some other Marvel movies suffer from."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":8,
+        "fields":{
+            "watched": true,
+            "title":"Deadpool",
+            "rating": 4,
+            "release_date": "2016-02-10",
+            "review": "Beautiful, irreverent and very violent film. Incredibly entertaining and fun as hell is also one of the least politically correct marvel films there is."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":9,
+        "fields":{
+            "watched": true,
+            "title":"Miracle in Cell No. 7",
+            "rating": 5,
+            "release_date": "2013-07-19",
+            "review": "A true heartfelt comedy. We see a connection between a mentally ill father and his lovingly adorable daughter. A really close one. Although mentally unfit, the emotion and love of the father is undeniable."
+        }
+    },
+    {
+        "model":"mywatchlist.mywatchlist",
+        "pk":10,
+        "fields":{
+            "watched": true,
+            "title":"The SpongeBob Movie: Sponge on the Run",
+            "rating": 3,
+            "release_date": "2020-07-14",
+            "review": "Although its story may leave fans on the surface, The Spongebob Movie: Sponge on the Run is a wondrously wacky visit to Bikini Bottom that retains the charm of the original series."
+        }
+    }
+]
