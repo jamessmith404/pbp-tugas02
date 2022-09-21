@@ -7,8 +7,11 @@ from django.core import serializers
 # Create your views here. Tugas 3 PBP
 def show_mywatchlist(request):
     data_mywatchlist = MyWatchList.objects.all()
+    watched = MyWatchList.objects.filter(watched=True).count()
+    not_watched = MyWatchList.objects.filter(watched=False).count()
     context = {
         'list_watchlist': data_mywatchlist,
+        'is_watchlist': True if watched >= not_watched else False,
         'nama': 'James Smith Wigglesworth',
         'NPM': '2106750225',
     }
