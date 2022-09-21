@@ -40,10 +40,11 @@ Dalam melakukan _deployment_, saya hanya me-push ke remote dari Tugas 2 PBP sebe
 ### Pemeriksaan _Routes_ dengan Postman
 
 1. `~/mywatchlist/html`<br><br>
-   
+
+   ![postman_HTML_Tugas3](https://user-images.githubusercontent.com/107617626/191416556-2e4557ae-e318-47a1-a64b-9dda8ed3e941.png)
 
 2. `~/mywatchlist/json`<br><br>
-   
+   ![postman_JSON_Tugas3](https://user-images.githubusercontent.com/107617626/191416575-4625d37d-5c8a-4798-8fda-29703b919ee5.png)
 
 3. `~/mywatchlist/xml`<br><br>
-   
+   ![postman_XML_Tugas3](https://user-images.githubusercontent.com/107617626/191416585-af70e67a-394e-45a1-be8f-fc19afefa335.png)
