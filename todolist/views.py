@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -14,7 +14,7 @@ from todolist.models import Task
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_todolist = Task.objects.all()
+    data_todolist = Task.objects.filter(user=request.user)
     context = {
         'nama': request.user.username,
         'list_todolist': data_todolist,
@@ -44,7 +44,7 @@ def login_user(request):
         if user is not None:
             login(request, user)                                                # melakukan login terlebih dahulu
             response = HttpResponseRedirect(reverse("todolist:show_todolist"))  # membuat response
-            response.set_cookie('last_login', str(datetime.datetime.now()))     # membuat cookie last_login dan menambahkannya ke dalam response
+            response.set_cookie('last_login', str(datetime.now()))     # membuat cookie last_login dan menambahkannya ke dalam response
             return response
         else:
             messages.info(request, 'Username atau Password salah!')
@@ -69,7 +69,7 @@ def create_task(request):
         new_task = Task.objects.create(user=request.user, date=date, title=title, description=description)
         return redirect('todolist:show_todolist')
 
-    return render(request, "create_task.html")
+    return render(request, "create-task.html")
 
 @login_required(login_url='/todolist/login/')
 def delete_task(request, id):

@@ -45,11 +45,11 @@ Untuk login, saya membuat file `login.html` di folder `templates`. Setelah itu, 
 
 Untuk landing page utama, todolist, saya membuat file `todolist.html` di folder `templates`. Kemudian, saya membuat sebuah `table` yang berisi task-task yang sudah ada dan dimiliki oleh suatu user tertentu serta setiap atributnya. Saya juga membuat tombol `Buat Task Baru` dan `Logout` agar user bisa menambah task baru atau keluar dari akun yang sedang digunakan.Untuk bagian bonus, saya membuat tombol `Selesai` dan `Belum Selesai` untuk mengubah atribut `is_finished`, serta `Hapus Task` untuk menghapus task tertentu berdasarkan urutan task-nya.
 
-Untuk laman pembuatan task baru, saya membuat file `tambahtask.html` di folder `templates`. Setelah itu, saya menuliskan judul di blok `meta` serta membuat _division_ class bernama `login`. Isi dari `login` adalah _header_ tambah task, kemudian dilanjutkan dengan menuliskan blok `form` bertipe POST yang berisi `csrf_token` (sebagai _safety measure_) serta `table` yang isinya adalah `<input>` yang bertipe text untuk menuliskan nama task, btn login_btn sebagai tombol untuk menambah task, serta `textarea` untuk field menulis deskripsi tugas
+Untuk laman pembuatan task baru, saya membuat file `create-task.html` di folder `templates`. Setelah itu, saya menuliskan judul di blok `meta` serta membuat _division_ class bernama `login`. Isi dari `login` adalah _header_ tambah task, kemudian dilanjutkan dengan menuliskan blok `form` bertipe POST yang berisi `csrf_token` (sebagai _safety measure_) serta `table` yang isinya adalah `<input>` yang bertipe text untuk menuliskan nama task, btn login_btn sebagai tombol untuk menambah task, serta `textarea` untuk field menulis deskripsi tugas
 
 Di `views.py`, saya membuat beberapa fungsi yang akan me-handle request dari user dan me-import beberapa library yang dibutuhkan, seperti yang sudah dijelaskan di Lab03. Fungsi yang saya buat ada 8, antara lain:
 
-1. show_todolist(), fungsi ini dibuat untuk menampilkan daftar todolist yang sudah dibuat oleh user tertentu. Dibuat dengan me-retrieve data yang ada di models, kemudian saya masukkan ke dalam `context` beserta dengan nama user. Data pada `context` akan ditampilkan di `todolist.html`
+1. show_todolist(), fungsi ini dibuat untuk menampilkan daftar todolist yang sudah dibuat oleh user tertentu. Dibuat dengan me-retrieve data yang ada di models dengan filter username dari akun yang sedang login, kemudian saya masukkan ke dalam `context` beserta dengan nama user. Data pada `context` akan ditampilkan di `todolist.html`
 2. create_task(), fungsi ini dibuat untuk user dapat menambah task. Dibuat dengan mengecek apakah tipe request user adalah POST. Jika iya, akan membuat objek Task baru berdasarkan judul dan deskripsi yang diinput beserta waktu kapan sang user membuatnya. Jika tidak, me-refresh laman.
 3. delete_task(), fungsi ini dibuat untuk user dapat menghapus task yang sudah ada. Dibuat dengan me-retrieve objek Task yang ingin dihapus berdasarkan index kemudian dihapus. Lalu, akan me-refresh laman
 4. done_task(), fungsi ini dibuat untuk user dapat menandai task yang sudah diselesaikan. Dibuat dengan me-retrieve objek Task yang ingin ditandai selesai berdasarkan index kemudian mengubah atribut `is_finished` nya menjadi True. Lalu, akan me-refresh laman
@@ -60,7 +60,7 @@ Di `views.py`, saya membuat beberapa fungsi yang akan me-handle request dari use
 
 Fungsi pada poin 1-6 dilengkapi _decorator_ @login_required agar pengaksesan fitur tersebut hanya bisa dilakukan ketika user sedang dalam kondisi login.
 
-Untuk pembuatan akun dan _dummy_ data, saya memanfaatkan laman register untuk membuat akun, login, kemudian tambahtask untuk menambah _dummy_ data.
+Untuk pembuatan akun dan _dummy_ data, saya memanfaatkan laman register untuk membuat akun, login, kemudian create-task untuk menambah _dummy_ data.
 
 Dalam _routing_, saya menambahkan fungsi-fungsi dari `views.py` yang ada di `todolist` sebelumnya ke `urlpatterns` yang ada di `urls.py` dengan nama _route_ yang bersesuaian dengan fungsi.
 
