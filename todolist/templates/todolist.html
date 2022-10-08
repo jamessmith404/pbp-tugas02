@@ -53,6 +53,11 @@
       background-color: #f1f1f1;
     }
 
+    .card:hover {
+      opacity: 0.8;
+    }
+
+
     /* Responsive columns - one column layout (vertical) on small screens */
     @media screen and (max-width: 600px) {
       .column {
@@ -66,10 +71,10 @@
   {% comment %} Add the data, for Tugas 4 {% endcomment %}
   <div class="row">
     {% for task in list_todolist %}
-    <div class="column">
-      <div class="card text-center">
+    <div class="column hover-zoom">
+      <div class="card text-center hover-zoom">
         <div class="card-header">
-          {% if not task.is_finished %}
+          {% if task.is_finished %}
           <a>Selesai</a>
           {% else %}
           <a>Belum Selesai</a>
