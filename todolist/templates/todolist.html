@@ -1,39 +1,99 @@
 {% extends 'base.html' %}
+ 
+<body>
+  {% block content %}
+  <nav class="navbar navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <h2 style="color: white; font-family: Helvetica;">Selamat datang, {{user.username}}!</h2>
+    <div>
+      <button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+      <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+    </div>
+  </nav>
 
- {% block content %}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  <h1>Tugas 4 Assignment PBP/PBD: Pengimplementasian Form dan Autentikasi Menggunakan Django</h1>
-  <h2>Selamat datang, {{user.username}}!</h2>
-  <table>
-    <tr>
-      <th>Tanggal</th>
-      <th>Judul</th>
-      <th>Deskripsi</th>
-      <th>Status Tugas</th>
-    </tr>
-    {% comment %} Add the data, for Tugas 4 {% endcomment %}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      /* fallback for old browsers */
+      background: #6a11cb;
+
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding in columns */
+    .row {margin: 0 -5px;}
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+      padding: 16px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+    /* Responsive columns - one column layout (vertical) on small screens */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+  {% comment %} Add the data, for Tugas 4 {% endcomment %}
+  <div class="row">
     {% for task in list_todolist %}
-    <tr>
-        <th>{{task.date}}</th>
-        <th>{{task.title}}</th>
-        <th>{{task.description}}</th>
-        <th>{% if task.is_finished %}
-            Selesai
-            {% else %}
-            Belum Selesai
-            {% endif %}
-        </th>
-        {% if not task.is_finished %}
-         <th><button><a href="{% url 'todolist:done_task' task.id %}">Selesai</a></button></th>
-        {% else %}
-         <th><button><a href="{% url 'todolist:undone_task' task.id %}">Belum Selesai</a></button></th>
-        {% endif %}
-        <th><button><a href="{% url 'todolist:delete_task' task.id %}">Hapus Task</a></button></th>
-    </tr>
-    {% endfor %}
-  </table>
+    <div class="column">
+      <div class="card text-center">
+        <div class="card-header">
+          {% if not task.is_finished %}
+          <a>Selesai</a>
+          {% else %}
+          <a>Belum Selesai</a>
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{task.title}}</h5>
+          <p class="card-text">{{task.description}}</p>
+          {% if not task.is_finished %}
+          <a href="{% url 'todolist:done_task' task.id %}" class="btn btn-primary">Selesai</a>
+          {% else %}
+          <a href="{% url 'todolist:undone_task' task.id %}" class="btn btn-primary">Belum Selesai</a>
+          {% endif %}
   
-  <button><a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a></button>
+          <a href="{% url 'todolist:delete_task' task.id %}" class="btn btn-primary">Hapus Task</a>
+        </div>
+        <div class="card-footer text-muted">
+          Dibuat tanggal {{task.date}}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  {% endblock content %}
+</body>
 
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
- {% endblock content %}
