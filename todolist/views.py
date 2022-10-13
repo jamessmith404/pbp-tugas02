@@ -21,7 +21,7 @@ def show_todolist(request):
         'list_todolist': data_todolist,
         # 'last_login': request.COOKIES['last_login'],
     }
-    return render(request, "todolist-ajax.html", context)
+    return render(request, "todolist-ajax.html", context) # ganti ini ketika ingin demo tugas 4-5
 
 @login_required(login_url='/todolist/login/')
 def show_todolist_json(request):
